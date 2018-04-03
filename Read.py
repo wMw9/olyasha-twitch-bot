@@ -8,7 +8,7 @@ def getUser(line):
 	#print ('getUser (separate[1]: ')
 	#print (separate[1])
 	user = separate[1].split("!", 1)[0]
-	print (user)
+	#print (user)
 	return user
 def getMessage(line):
 	#print(line)
@@ -33,7 +33,7 @@ def getMessage(line):
 def isSub(line):
 	separate = line.split(":", 2)
 	#print(len(separate))
-	#print(separate)
+	print(separate)
 	if len(separate) == 3:
 		message = separate[0]
 	else:
