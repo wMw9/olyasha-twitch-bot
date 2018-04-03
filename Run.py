@@ -7,7 +7,7 @@ from Settings import INVITE
 s = openSocket()
 joinRoom(s)
 s.send(bytes("CAP REQ :twitch.tv/tags" + "\r\n", 'UTF-8'))
-#s.send(bytes("CAP REQ :twitch.tv/commands" + "\r\n", 'UTF-8'))
+s.send(bytes("CAP REQ :twitch.tv/commands" + "\r\n", 'UTF-8'))
 readbuffer = ""
 
 while True:
