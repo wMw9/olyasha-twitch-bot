@@ -34,6 +34,7 @@ while True:
 			print (user + ": " + message)
 			if "!inv" in message:
 				i = isSub(line)
+				print (i)
 				if ("subscriber=1" in i) or ("@badges=moderator" in i) or ("@badges=broadcaster" in i):
 					#print ('Да, он саб!')
 					sendWhisper(s, user, 'Привет, '+ user +'. Добро пожаловать в тайный чатик утиной армию, НИКОМУ не показывай ссылку!: ' + INVITE)
