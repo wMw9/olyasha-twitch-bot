@@ -15,7 +15,7 @@ def getMessage(line):
 	#separate = line.split(":", 2)
 	separate = line.split(":", 2)
 	#print ('getMessage: ')
-	print(len(separate))
+	#print(len(separate))
 	#print(separate)
 	if len(separate) == 3:
 		message = separate[2]
@@ -32,8 +32,8 @@ def getMessage(line):
 
 def isSub(line):
 	separate = line.split(":", 2)
-	print(len(separate))
-	print(separate)
+	#print(len(separate))
+	#print(separate)
 	if len(separate) == 3:
 		message = separate[0]
 	else:

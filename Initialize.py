@@ -4,7 +4,7 @@ def joinRoom(s):
 	readbuffer = ""
 	Loading = True
 	while Loading:
-		print ('Initialize.py: Loading cycle')
+		#print ('Initialize.py: Loading cycle')
 		s_bytes = s.recv(1024)
 		s_str = s_bytes.decode('utf-8')
 		readbuffer = readbuffer + s_str #s.recv(1024)

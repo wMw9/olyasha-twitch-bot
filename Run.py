@@ -11,7 +11,7 @@ s.send(bytes("CAP REQ :twitch.tv/tags" + "\r\n", 'UTF-8'))
 readbuffer = ""
 
 while True:
-		print ('Run.py cycle')
+		#print ('Run.py cycle')
 		s_bytes = s.recv(1024)
 		s_str = s_bytes.decode('utf-8')
 		readbuffer = readbuffer + s_str #s.recv(1024)
