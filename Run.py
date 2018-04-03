@@ -27,21 +27,20 @@ while True:
 			if "PING :tmi.twitch.tv" in line:
 				s.send(bytes('PONG :tmi.twitch.tv\r\n', 'UTF-8'))
 				break
-			user = getUser(line)
-			#print ('Run.py: ' + user)
+			user = getUser(line)		
 			#print (getMessage(line))
 			message = getMessage(line)
 			#print ('message: ' + message)
 			print (user + ": " + message)
-			if "!chat" in message:
+			if "!inv" in message:
 				i = isSub(line)
 				if ("subscriber=1" in i) or ("@badges=moderator" in i) or ("@badges=broadcaster" in i):
-					print ('Да, он саб!')
-					sendWhisper(s, user, 'Привет, '+ user +'. Добро пожаловать в утиную армию: ' + INVITE)
+					#print ('Да, он саб!')
+					sendWhisper(s, user, 'Привет, '+ user +'. Добро пожаловать в тайный чатик утиной армию, НИКОМУ не показывай ссылку!: ' + INVITE)
 					break
-				print ('Не саб!')
+				#print ('Не саб!')
 				sendWhisper(s, user, 'Прости, ' + user + '... но ты не подписчик Оляши. Саб-чат в телеграме доступен только для солдатов утиной армии')
 				break
-			if "suck" in message:
-				sendMessage(s, "No, you suck!")
-				break
+			#if "suck" in message:
+			#	sendMessage(s, "No, you suck!")
+			#	break
