@@ -37,7 +37,7 @@ while True:
 				#print (i)
 				if ("subscriber=1" in i) or ("@badges=moderator" in i) or ("@badges=broadcaster" in i):
 					#print ('Да, он саб!')
-					sendWhisper(s, user, 'Привет, '+ user +'. Добро пожаловать в тайный чатик утиной армию, НИКОМУ не показывай ссылку!: ' + INVITE)
+					sendWhisper(s, user, 'Привет, '+ user +'. Добро пожаловать в тайный чатик утиной армии, НИКОМУ не показывай ссылку!: ' + INVITE)
 					break
 				#print ('Не саб!')
 				#sendWhisper(s, user, 'Прости, ' + user + '... но ты не подписчик Оляши. Саб-чат в телеграме доступен только для солдатов утиной армии')
