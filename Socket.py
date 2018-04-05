@@ -19,7 +19,7 @@ def sendMessage(s, message):
 	print("Sent: " + messageTemp)
 
 def sendWhisper(s, user, message):
-	messageTemp = "PRIVMSG #" + CHANNEL + " :/w" + user + " " + message
+	messageTemp = "PRIVMSG #" + CHANNEL + " :/w " + user + " " + message
 	#s.send("PRIVMSG #wmw_ :/w " + username + " " + message + "\r\n")
 	#s.send(messageTemp + "\r\n")
 	s.send(bytes(messageTemp + "\r\n", 'UTF-8'))
