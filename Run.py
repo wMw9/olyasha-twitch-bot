@@ -8,6 +8,7 @@ s = openSocket()
 joinRoom(s)
 s.send(bytes("CAP REQ :twitch.tv/tags" + "\r\n", 'UTF-8'))
 s.send(bytes("CAP REQ :twitch.tv/commands" + "\r\n", 'UTF-8'))
+s.send(bytes("CAP REQ :twitch.tv/membership" + "\r\n", 'UTF-8'))
 readbuffer = ""
 
 while True:
@@ -35,7 +36,7 @@ while True:
 			if "!inv" in message:
 				i = isSub(line)
 				#print (i)
-				if ("subscriber=1" in i) or ("@badges=moderator" in i) or ("@badges=broadcaster" in i) or ("apostolshevtsov" in i):
+				if ("subscriber=1" in i) or ("@badges=moderator" in i) or ("@badges=broadcaster" in i):
 					#print ('Да, он саб!')
 					sendWhisper(s, user, 'Привет, '+ user +'. Добро пожаловать в тайный чатик утиной армии, НИКОМУ не показывай ссылку!: ' + INVITE)
 					break

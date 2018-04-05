@@ -18,7 +18,7 @@ def joinRoom(s):
 			print(line)
 			Loading = loadingComplete(line)
 	#sendMessage(s, "Successfully joined chat")
-	sendWhisper(s, "wmw_", "Successfully joined chat")
+	#sendWhisper(s, "wmw_", "Successfully joined chat")
 	#sendMessage(s, "CAP REQ :twitch.tv/tags")
 	#s.send(bytes("CAP REQ :twitch.tv/tags" + "\r\n", 'UTF-8'))
 	#s.send(bytes("CAP REQ :twitch.tv/commands" + "\r\n", 'UTF-8'))
