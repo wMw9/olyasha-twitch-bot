@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 import string
-from Read import getUser, getMessage, isSub
+from Read import getUser, getMessage, isSub, getId
 from Socket import openSocket, sendMessage, sendWhisper
 from Initialize import joinRoom
 from Settings import INVITE
@@ -28,7 +29,8 @@ while True:
 				i = isSub(line)
 				if i:
 					#print ('Да, он саб!')
-					sendWhisper(s, user, 'Привет, '+ user +'. Добро пожаловать в тайный чатик утиной армии, НИКОМУ не показывай ссылку!: ' + INVITE)
+					#sendWhisper(s, user, 'Привет, '+ user +'. Добро пожаловать в тайный чатик утиной армии, НИКОМУ не показывай ссылку!: ' + INVITE)
+					getId(line)
 					break
 				#print ('Не саб!')
 				#sendWhisper(s, user, 'Прости, ' + user + '... но ты не подписчик Оляши. Саб-чат в телеграме доступен только для солдатов утиной армии')
