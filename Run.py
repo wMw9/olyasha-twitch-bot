@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-import string
+import string, requests
 from Read import getUser, getMessage, isSub, getId
 from Socket import openSocket, sendMessage, sendWhisper
 from Initialize import joinRoom
-from Settings import INVITE
+from Settings import INVITE, URL_TELE_API
 
 s = openSocket()
 joinRoom(s)
@@ -30,6 +30,9 @@ while True:
 				if i:
 					#print ('Да, он саб!')
 					sendWhisper(s, user, 'Привет, '+ user +'. Добро пожаловать в тайный чатик утиной армии, НИКОМУ не показывай ссылку!: ' + INVITE)
+
+					data_message = {'chat_id': 144149077, 'text': 'twitch.tv/' + user + ' запросил инвайт в саб-чат', 'disable_web_page_preview': True}
+					r_inst = requests.post(URL_TELE_API + 'sendMessage', data=data_message)
 					#getId(line)
 					break
 				#print ('Не саб!')
