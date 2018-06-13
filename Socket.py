@@ -1,8 +1,8 @@
 import socket
-from Settings import HOST, PORT, PASS, IDENT, CHANNEL
+from Settings import HOST, PORT, IDENT, CHANNEL
+from tkn import PASS
 
 def openSocket():
-	
 	s = socket.socket()
 	s.connect((HOST, PORT))
 	s.send(bytes("PASS " + PASS + "\r\n", 'UTF-8'))
