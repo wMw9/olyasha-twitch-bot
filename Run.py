@@ -1,10 +1,12 @@
-import string, time, threading
-from Read import getUser, getMessage, isSub
-from Socket import openSocket, sendMessage, sendWhisper
+# -*- coding: utf-8 -*-
+import string, time, threading, requests
 from Initialize import joinRoom
 #from Settings import INVITE
-from tkn import INVITE
+from tkn import INVITE, URL_TELE_API
 from Subs import addUsrfromchat
+from Read import getUser, getMessage, isSub, getId
+from Socket import openSocket, sendMessage, sendWhisper
+from Initialize import joinRoom
 
 s = openSocket()
 joinRoom(s)
@@ -42,6 +44,9 @@ while True:
 					#print ('Да, он саб!')
 					sendWhisper(s, user, 'Привет, '+ user +'. Добро пожаловать в тайный чатик утиной армии, НИКОМУ не показывай ссылку!: ' + INVITE)
 					#addUsrfromchat(user, round(time.time()), '', True, 0, 0, '')
+					data_message = {'chat_id': 144149077, 'text': 'twitch.tv/' + user + ' запросил инвайт в саб-чат', 'disable_web_page_preview': True}
+					r_inst = requests.post(URL_TELE_API + 'sendMessage', data=data_message)
+					#getId(line)
 					break
 				#print ('Не саб!')
 				#sendWhisper(s, user, 'Прости, ' + user + '... но ты не подписчик Оляши. Саб-чат в телеграме доступен только для солдатов утиной армии')

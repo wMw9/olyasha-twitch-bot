@@ -1,5 +1,12 @@
 #import string
 from Subs import addUsrfromchat
+import re
+
+def getId(line):
+	separate = line.split(':')
+	match = re.search(';user-id=(.*);user-type=', separate[0])
+	print (match.group(1))
+	return match.group(1)
 
 def getUser(line):
 	separate = line.split(":", 2)

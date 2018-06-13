@@ -1,6 +1,6 @@
-#from Settings import CLIENT_ID
+# -*- coding: utf-8 -*-
 from tkn import CLIENT_ID
-import threading
+import threading, requests, time
 import requests #import Request, urlopen
 usr = []
 sub = []
@@ -18,6 +18,12 @@ def checkUsrForSub():
 	r = requests.get('https://api.twitch.tv/kraken/users/41434114/chat/channels/104717035?api_version=5', headers=headers)
 	return r.text
 
+usr = []
+sub = []
 
-#
-#print(checkUsrForSub())
+def addUsr(userid, name, issub, mail, ts):
+	usr.append({'userid': userid, 'name' : name, 'issub' : issub, 'mail' : mail, 'ts' : ts})
+	print (len(usr))
+	print (usr)
+
+#addUsr(1234, 'wmw', True, 'wmw@mail.ru', round(time.time()))
