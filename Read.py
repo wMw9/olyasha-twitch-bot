@@ -13,7 +13,7 @@ def getMessage(line):
 		message = separate[1]
 	return message
 
-def getUserId(line)
+def getUserId(line):
 	separate = line.split(':')
 	#userid = separate
 
