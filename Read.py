@@ -20,7 +20,7 @@ def getUserId(line):
 def isSub(line):
 	s = line.split(":")
 	if ("subscriber=1" in s[0]) or ("@badges=moderator" in s[0]) or ("@badges=broadcaster" in s[0]):
-		addUsrfromchat(name, ts, mail, issub, sentmail, sentirc, other)
+		#addUsrfromchat(name, ts, mail, issub, sentmail, sentirc, other)
 		return True
 	else:
 		return False

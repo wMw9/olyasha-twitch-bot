@@ -17,6 +17,7 @@ readbuffer = ""
 def pong():
 	while True:
 		s.send(bytes('PONG :tmi.twitch.tv\r\n', 'UTF-8'))
+		print('sending pong')
 		time.sleep(300)
 
 t = threading.Thread(target=pong)
