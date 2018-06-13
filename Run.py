@@ -19,7 +19,7 @@ def pong():
 		s.send(bytes('PONG :tmi.twitch.tv\r\n', 'UTF-8'))
 		time.sleep(300)
 
-t = threading.Thread(target=pong, args=(,))
+t = threading.Thread(target=pong)
 t.start()
 
 while True:
