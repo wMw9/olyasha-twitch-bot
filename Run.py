@@ -48,6 +48,6 @@ while True:
 					r_inst = requests.post(URL_TELE_API + 'sendMessage', data=data_message)
 					#getId(line)
 					break
-				#print ('Не саб!')
+				#print ('Не саб!!')
 				#sendWhisper(s, user, 'Прости, ' + user + '... но ты не подписчик Оляши. Саб-чат в телеграме доступен только для солдатов утиной армии')
 				break
