@@ -17,37 +17,37 @@ readbuffer = ""
 
 # PONG every 5 min
 def pong():
-	while True:
-		s.send(bytes('PONG :tmi.twitch.tv\r\n', 'UTF-8'))
-		print('sending pong')
-		time.sleep(300)
+    while True:
+        s.send(bytes('PONG :tmi.twitch.tv\r\n', 'UTF-8'))
+        print('sending pong')
+        time.sleep(300)
 
 t = threading.Thread(target=pong)
 t.start()
 
 while True:
-		s_bytes = s.recv(1024)
-		s_str = s_bytes.decode('utf-8')
-		readbuffer = readbuffer + s_str #s.recv(1024)
-		temp = readbuffer.split("\n")
-		readbuffer = temp.pop()
-		for line in temp:
-			print(line)
-			if "PING :tmi.twitch.tv" in line:
-				s.send(bytes('PONG :tmi.twitch.tv\r\n', 'UTF-8'))
-				break
-			user = getUser(line)		
-			message = getMessage(line)
-			if "!inv" in line:
-				i = isSub(line)
-				if i:
-					#print ('Да, он саб!')
-					sendWhisper(s, user, 'Привет, '+ user +'. Добро пожаловать в тайный чатик утиной армии, НИКОМУ не показывай ссылку!: ' + INVITE)
-					#addUsrfromchat(user, round(time.time()), '', True, 0, 0, '')
-					data_message = {'chat_id': 144149077, 'text': 'twitch.tv/' + user + ' запросил инвайт в саб-чат', 'disable_web_page_preview': True}
-					r_inst = requests.post(URL_TELE_API + 'sendMessage', data=data_message)
-					#getId(line)
-					break
-				#print ('Не саб!!')
-				#sendWhisper(s, user, 'Прости, ' + user + '... но ты не подписчик Оляши. Саб-чат в телеграме доступен только для солдатов утиной армии')
-				break
+        s_bytes = s.recv(1024)
+        s_str = s_bytes.decode('utf-8')
+        readbuffer = readbuffer + s_str #s.recv(1024)
+        temp = readbuffer.split("\n")
+        readbuffer = temp.pop()
+        for line in temp:
+            print(line)
+            if "PING :tmi.twitch.tv" in line:
+                s.send(bytes('PONG :tmi.twitch.tv\r\n', 'UTF-8'))
+                break
+            user = getUser(line)
+            message = getMessage(line)
+            if "!inv" in line:
+                i = isSub(line)
+                if i:
+                    #print ('Да, он саб!')
+                    sendWhisper(s, user, 'Привет, '+ user +'. Добро пожаловать в тайный чатик утиной армии, НИКОМУ не показывай ссылку!: ' + INVITE)
+                    #addUsrfromchat(user, round(time.time()), '', True, 0, 0, '')
+                    data_message = {'chat_id': 144149077, 'text': 'twitch.tv/' + user + ' запросил инвайт в саб-чат', 'disable_web_page_preview': True}
+                    r_inst = requests.post(URL_TELE_API + 'sendMessage', data=data_message)
+                    #getId(line)
+                    break
+                #print ('Не саб!!')
+                #sendWhisper(s, user, 'Прости, ' + user + '... но ты не подписчик Оляши. Саб-чат в телеграме доступен только для солдатов утиной армии')
+                break
