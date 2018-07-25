@@ -1,4 +1,19 @@
 cfg.py
+olyasha-telegram-bot/cfg.py
+olyasha-telegram-bot/tkn.py
+
+# Environments
+.env
+.venv
+env/
+*.iml
+.idea
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+cfg.py
 tkn.py
 __pycache__/
 *.py[cod]
