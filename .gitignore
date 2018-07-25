@@ -1,6 +1,8 @@
 cfg.py
 olyasha-telegram-bot/cfg.py
 olyasha-telegram-bot/tkn.py
+__pycache__/
+restart
 
 # Environments
 .env
